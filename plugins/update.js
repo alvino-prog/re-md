@@ -1,4 +1,5 @@
-let { execSync } = require('child_process')
+//let { execSync } = require('child_process')
+import { execSync } from 'child_process'
 let handler = async (m, { conn, text, isROwner }) => {
   if (global.conn.user.jid == conn.user.jid) {
     let stdout = execSync('git remote set-url origin https://github.com/alvino-prog/re-md.git && git pull' + (isROwner && text ? ' ' + text : ''))
@@ -10,6 +11,6 @@ handler.help = ['update']
 handler.tags = ['host']
 handler.command = /^(update|uo?p?|uodate)$/i //sedia payung sebelum hujan meteor 
 
-handler.rowner = true
+handler.owner = true
 
-module.exports = handler
+export default handler
