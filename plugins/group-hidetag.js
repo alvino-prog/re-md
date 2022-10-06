@@ -15,3 +15,4 @@ handler.command = /^(hidetag)$/i
 handler.group = true
 
 export default handler
+
